@@ -8,13 +8,14 @@ var QWeb = core.qweb;
 var _t = core._t;
 
 
+
 var QrAttendances = AbstractAction.extend({
 
    events: {
         'click .qr_device': 'qr_device'
    },
-   template: 'QrScan',
-   willStart: function () {
+   //template: 'QrScan',
+   start: function () {
         var self = this;
         var def = this._rpc({
                 model: 'hr.employee',
@@ -22,12 +23,13 @@ var QrAttendances = AbstractAction.extend({
                 args: [[['user_id', '=', this.getSession().uid]], ['attendance_state', 'name']],
             })
             .then(function (res) {
-                self.employee = res[0];
-                this.$el.html(QWeb.render("QrScan", {widget: self}));
-                    if (_.isEmpty(res) ) {
+                self.employee = res.length && res[0];
+                self.$el.html(QWeb.render("QrScan", {widget: self}));
+                  if (_.isEmpty(res) ) {
                         return;
                     }
             });
+
          return $.when(def, this._super.apply(this, arguments));
    },
    drawLine: function (begin, end, color) {
