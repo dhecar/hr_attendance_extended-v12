@@ -23,7 +23,7 @@ var QrAttendances = AbstractAction.extend({
             })
             .then(function (res) {
                 self.employee = res[0];
-                self.$el.html(QWeb.render("QrScan", {widget: self}));
+                this.$el.html(QWeb.render("QrScan", {widget: self}));
                     if (_.isEmpty(res) ) {
                         return;
                     }
