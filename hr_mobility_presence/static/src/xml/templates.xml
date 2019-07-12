@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="QrScan">
+    <div class="o_hr_attendance_kiosk_mode_container o_app_switcher_background">
+            <div class="o_hr_attendance_kiosk_mode">
+                <t t-if="widget.employee">
+                <h1>Welcome <t t-esc="widget.employee.name"/></h1>
+                <t t-if="widget.employee.attendance_state=='checked_out'">
+                        <h2>Click to check in</h2>
+                        <i class="fa fa-sign-in btn-primary qr_device o_hr_attendance_sign_in_out_icon"/>
+                    </t>
+                    <t t-if="widget.employee.attendance_state=='checked_in'">
+                        <h2>Click to check out</h2>
+                        <i class="fa fa-sign-out btn-primary qr_device o_hr_attendance_sign_in_out_icon"/>
+                    </t>
+                </t>
+                <t t-if="!widget.employee">
+                    Error : Could not find employee linked to user.
+                </t>
+
+            </div>
+    </div>
+    </t>
+
+
+    <t t-name="QrActivate">
+
+
+         <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+         <canvas id="canvas" class="canvas"></canvas>
+          <div id="output">
+            <div id="outputMessage">No QR code detected.</div>
+            <div ><b>Data:</b> <span id="outputData"></span></div>
+          </div>
+
+
+    </t>
+
+
+
+</templates>

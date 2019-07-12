@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_attendance_qr,access_hr_attendance_qr,hr_attendance.model_hr_attendance,hr_mobility_presence.group_hr_qr_attendance_user,1,1,1,0
+access_hr_employee_qr,access.hr.employee.qr,model_hr_employee,hr_mobility_presence.group_hr_qr_attendance_user,1,0,0,0
+access_resources_resource_qr,access.resource.resource.qr,resource.model_resource_resource,hr_mobility_presence.group_hr_qr_attendance_user,1,0,0,0

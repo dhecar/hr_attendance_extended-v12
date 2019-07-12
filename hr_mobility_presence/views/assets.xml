@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="hr-mobility-assets assets backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/hr_mobility_presence/static/src/css/hr_mobility_presence.css"/>
+                <script type="text/javascript" src="/hr_mobility_presence/static/lib/jsQR.js"></script>
+                <script type="text/javascript" src="/hr_mobility_presence/static/src/js/qr-scan.js"></script>
+                <script type="text/javascript" src="/hr_mobility_presence/static/src/js/greeting_messages_extend.js"></script>
+        </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_hr_qr_attendance_user" model="res.groups">
+        <field name="name">Qr Attendance</field>
+        <field name="category_id" ref="base.module_category_hr_attendance"/>
+        <field name="comment">Enable Attendance menu and  manage his own attendance with Qr scanning.</field>
+    </record>
+
+   <record id="hr_mobility_presence.group_hr_qr_attendance_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('hr_attendance.group_hr_attendance'))]"/>
+   </record>
+
+
+
+</odoo>
