@@ -102,8 +102,8 @@ var QrAttendances = AbstractAction.extend({
                         loadingMessage.hidden = true;
                         canvasElement.hidden = false;
                         outputContainer.hidden = false;
-                        canvasElement.height = video.videoHeight;
-                        canvasElement.width = video.videoWidth;
+                        canvasElement.height = 180 //video.videoHeight;
+                        canvasElement.width = 180 //video.videoWidth;
                         canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
                         var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
                         var code = jsQR(imageData.data, imageData.width, imageData.height, {
